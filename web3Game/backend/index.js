@@ -2,12 +2,15 @@ import express from 'express'
 // turn this commonjs import into an es6 import
 import { verifyMessage } from '@wagmi/core'
 import { config } from './utils.js'
+import cors from 'cors'
 const app = express()
 const port = 3001
 
 // Use middleware to parse JSON bodies
 app.use(express.json())
-
+app.use(cors({
+  origin: 'http://localhost:3000'
+}))
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })

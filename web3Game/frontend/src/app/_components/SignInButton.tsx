@@ -2,9 +2,11 @@
 import React from "react";
 import { signMessage } from '@wagmi/core'
 import { config } from "./Provider";
+import { useAccount } from "wagmi";
 
 const CustomSIWEButton = () => {
   const [isLoading, setIsLoading] = React.useState(false);
+  const {address} = useAccount();
   const [isSigned, setIsSigned] = React.useState(false);
   const handleSignIn = async () => {
     setIsLoading(() => true);
@@ -15,7 +17,26 @@ const CustomSIWEButton = () => {
     if (signature) {
       setIsSigned(() => true);
     }
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    const data = {
+      address: address,
+      message: message,
+      signature: signature
+    };
+    // send request to server localhost:3001/verify with data
+    const response = await fetch('http://localhost:3001/verify', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    const responseData = await response.json();
+    console.log(responseData);
+    if(responseData.result)
+    {
+      console.log("Success");
+    }
+
     setIsLoading(false);
   };
   /** Wallet is connected, but not signed in */
