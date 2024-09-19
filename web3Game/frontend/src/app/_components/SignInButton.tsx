@@ -2,7 +2,6 @@
 import React from "react";
 import { signMessage } from '@wagmi/core'
 import { config } from "./Provider";
-import { tr } from "framer-motion/client";
 
 const CustomSIWEButton = () => {
   const [isLoading, setIsLoading] = React.useState(false);
