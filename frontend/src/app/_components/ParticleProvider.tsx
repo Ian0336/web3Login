@@ -11,7 +11,6 @@ import {
   lineaSepolia,
   polygon,
   polygonAmoy,
-  solana,
   seiTestnet
 } from '@particle-network/connectkit/chains';
 import { evmWalletConnectors } from '@particle-network/connectkit/evm';
@@ -93,7 +92,7 @@ const config = createConfig({
       //   version: "1.0.0",
       // }),
     ],
-    chains: [seiTestnet, solana, mainnet, sepolia,bsc,bscTestnet,linea,lineaSepolia,polygon,polygonAmoy]
+    chains: [seiTestnet, mainnet, sepolia,bsc,bscTestnet,linea,lineaSepolia,polygon,polygonAmoy]
   
 });
 

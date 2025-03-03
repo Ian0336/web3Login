@@ -3,7 +3,7 @@ import express from 'express'
 import { verifyMessage } from '@wagmi/core'
 import { config } from './utils.js'
 import cors from 'cors'
-import { generateTokens } from './utils/jwt.js'
+import { generateTokens, verifyToken } from './utils/jwt.js'
 import { MESSAGE_EXPIRY } from './config/auth.js'
 
 const app = express()
