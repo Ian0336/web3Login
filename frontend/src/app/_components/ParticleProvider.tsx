@@ -12,11 +12,10 @@ import {
   polygon,
   polygonAmoy,
   solana,
-  solanaTestnet,
   seiTestnet
 } from '@particle-network/connectkit/chains';
 import { evmWalletConnectors } from '@particle-network/connectkit/evm';
-import { solanaWalletConnectors } from '@particle-network/connectkit/solana';
+// import { solanaWalletConnectors } from '@particle-network/connectkit/solana';
 // import { wallet, EntryPosition } from '@particle-network/connectkit/wallet';
 // import { aa } from '@particle-network/connectkit/aa';
 import React from 'react';
@@ -78,7 +77,7 @@ const config = createConfig({
             },
         }),
 
-        solanaWalletConnectors(), // Optional, you need to configure it when using Solana
+        // solanaWalletConnectors(), // Optional, you need to configure it when using Solana
     ],
     plugins: [
       // Embedded wallet configuration
@@ -94,7 +93,7 @@ const config = createConfig({
       //   version: "1.0.0",
       // }),
     ],
-    chains: [seiTestnet, mainnet, solana,sepolia,bsc,bscTestnet,linea,lineaSepolia,polygon,polygonAmoy,solana,solanaTestnet]
+    chains: [seiTestnet, solana, mainnet, sepolia,bsc,bscTestnet,linea,lineaSepolia,polygon,polygonAmoy]
   
 });
 
