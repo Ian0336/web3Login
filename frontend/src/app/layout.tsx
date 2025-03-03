@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Web3Provider } from "./_components/Provider";
+import { ParticleConnectkit } from "./_components/ParticleProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,9 +29,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Web3Provider>
+        <ParticleConnectkit>
           {children}
-        </Web3Provider>
+        </ParticleConnectkit>
       </body>
     </html>
   );
